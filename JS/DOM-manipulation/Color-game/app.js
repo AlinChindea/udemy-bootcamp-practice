@@ -22,12 +22,21 @@ for (let i = 0; i < squares.length; i++) {
   squares[i].addEventListener('click', function() {
     //grab color of clicked square and
     const clickedColor = this.style.backgroundColor;
-    //compared it to picked color
+    //compare it to picked color
     if(clickedColor === pickedColor){
       messageDisplay.textContent = 'Correct!';
+      changeColors(clickedColor);
     } else {
       this.style.backgroundColor = '#c0c5ff';
       messageDisplay.textContent = 'Try again';
     }
   });
+}
+
+function changeColors(color){
+  //loop through all squares
+  for(let i = 0; i < squares.length; i++) {
+    //change each color to match given color
+    squares[i].style.backgroundColor = color;
+  }
 }
