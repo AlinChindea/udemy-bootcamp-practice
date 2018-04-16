@@ -38,8 +38,6 @@ hardBtn.addEventListener('click', function(){
   }
 });
 
-
-
 resetButton.addEventListener('click', function(){
   //generate all new Colors
   colors = generateRandomColors(numSquares);
@@ -51,7 +49,7 @@ resetButton.addEventListener('click', function(){
   for(let i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colors[i];
   }
-  h1.style.backgroundColor = '#c0c5ff';
+  h1.style.backgroundColor = 'steelblue';
 });
 
 colorDisplay.textContent = pickedColor;
@@ -66,13 +64,13 @@ for (let i = 0; i < squares.length; i++) {
     const clickedColor = this.style.backgroundColor;
     //compare it to picked color
     if(clickedColor === pickedColor){
-      messageDisplay.textContent = 'Correct!';
+      messageDisplay.innerHTML = '<i class="far fa-thumbs-up"></i> Correct!';
       resetButton.textContent = 'Play again?';
       changeColors(clickedColor);
       h1.style.backgroundColor = clickedColor;
     } else {
       this.style.backgroundColor = '#c0c5ff';
-      messageDisplay.textContent = 'Try again';
+      messageDisplay.innerHTML = '<i class="far fa-thumbs-down"></i> Try again';
     }
   });
 }
