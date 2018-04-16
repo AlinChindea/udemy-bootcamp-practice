@@ -1,4 +1,4 @@
-let numSquares = 6;
+let numSquares = 9;
 let colors = [];
 let pickedColor;
 const squares = document.querySelectorAll('.square');
@@ -21,10 +21,20 @@ function setupModeButtons(){
     modeButtons[i].addEventListener('click', function(){
       modeButtons[0].classList.remove('selected');
       modeButtons[1].classList.remove('selected');
+      modeButtons[2].classList.remove('selected');
       this.classList.add('selected');
-      this.textContent === 'Easy' ? numSquares = 3 : numSquares = 6;
+      switch (this.textContent) {
+        case 'Easy':
+          numSquares = 3;
+          break;
+        case 'Hard':
+          numSquares = 6;
+          break;
+        case 'Extreme':
+          numSquares = 9;
+          break;
+      }
       reset();
-
     });
   }
 }
