@@ -1,0 +1,20 @@
+body {
+  background-color: grey;
+}
+
+.square {
+  width: 30%;
+  background: dodgerblue;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1  {
+  color: #fff;
+}
